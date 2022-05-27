@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd">
+
+    <changeSet id="fill_data_for_fourth_strategy" author="Rashchupkin">
+        <sql dbms="h2, mysql">
+            INSERT INTO billing_details (owner)
+            VALUES ('John'), ('Alex'), ('James'), ('Mary'), ('Patricia'), ('Jennifer'),
+            ('Robert'), ('Michael'), ('William'), ('Linda'), ('Elizabeth'), ('Barbara');
+
+            INSERT INTO credit_cards (card_number, id)
+            VALUES ('1234', 1), ('2345', 2), ('3456', 3), ('4567', 4), ('5678', 5), ('6789', 6);
+
+            INSERT INTO bank_accounts (bank_name, id)
+            VALUES ('Alfa', 7), ('Beta', 8), ('Charlie', 9), ('Delta', 10), ('Echo', 11), ('Foxtrot', 12);
+        </sql>
+    </changeSet>
+</databaseChangeLog>

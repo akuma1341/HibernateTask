@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd">
+
+    <changeSet id="create_tables_for_second_strategy" author="Rashchupkin">
+        <createTable tableName="students">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="first_name" type="varchar(50)"/>
+            <column name="phone_numbers" type="varchar(255)"/>
+            <column name="group_number" type="varchar(10)"/>
+        </createTable>
+
+        <createTable tableName="teachers">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="first_name" type="varchar(50)"/>
+            <column name="phone_numbers" type="varchar(255)"/>
+            <column name="on_vocation" type="tinyint"/>
+        </createTable>
+
+    </changeSet>
+</databaseChangeLog>

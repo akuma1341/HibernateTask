@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd">
+
+    <changeSet id="fill_data_for_third_strategy" author="Rashchupkin">
+        <sql dbms="h2, mysql">
+            INSERT INTO employees (position, salary, bonus, language)
+            VALUES ('MANAGER', 100.0, 10.0, NULL),
+            ('MANAGER', 110.1, 10.0, NULL),
+            ('MANAGER', 120.5, 15.1, NULL),
+            ('MANAGER', 130.4, 20.0, NULL),
+            ('MANAGER', 140.3, 25.3, NULL),
+            ('PROGRAMMER', 100.0, NULL, 'Python'),
+            ('PROGRAMMER', 110.0, NULL, 'JavaScript'),
+            ('PROGRAMMER', 120.0, NULL, 'C++'),
+            ('PROGRAMMER', 130.0, NULL, 'Java'),
+            ('PROGRAMMER', 140.0, NULL, 'PHP');
+        </sql>
+    </changeSet>
+</databaseChangeLog>

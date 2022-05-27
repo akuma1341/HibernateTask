@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd">
+
+    <changeSet id="create_tables_for_fourth_strategy" author="Rashchupkin">
+        <createTable tableName="billing_details">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="owner" type="varchar(20)"/>
+        </createTable>
+
+        <createTable tableName="credit_cards">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"
+                             foreignKeyName="fk_cc_id_billing_details" referencedTableName="billing_details"
+                             referencedColumnNames="id"/>
+            </column>
+            <column name="card_number" type="int"/>
+        </createTable>
+
+
+        <createTable tableName="bank_accounts">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"
+                             foreignKeyName="fk_ba_id_billing_details" referencedTableName="billing_details"
+                             referencedColumnNames="id"/>
+            </column>
+            <column name="bank_name" type="varchar(255)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

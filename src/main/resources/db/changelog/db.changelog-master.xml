@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd
+      http://www.liquibase.org/xml/ns/pro
+      http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd">
+    <include file="db/changelog/changeset/strategies/first/create_tables.xml"/>
+    <include file="db/changelog/changeset/strategies/first/fill_tables.xml"/>
+
+    <include file="db/changelog/changeset/strategies/second/create_tables.xml"/>
+    <include file="db/changelog/changeset/strategies/second/fill_tables.xml"/>
+
+    <include file="db/changelog/changeset/strategies/third/create_tables.xml"/>
+    <include file="db/changelog/changeset/strategies/third/fill_tables.xml"/>
+
+    <include file="db/changelog/changeset/strategies/fourth/create_tables.xml"/>
+    <include file="db/changelog/changeset/strategies/fourth/fill_tables.xml"/>
+</databaseChangeLog>
