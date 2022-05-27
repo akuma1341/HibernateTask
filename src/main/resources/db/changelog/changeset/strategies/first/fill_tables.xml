@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd">
+
+    <changeSet id="fill_data_for_first_strategy" author="Rashchupkin">
+        <sql dbms="h2, mysql">
+            INSERT INTO cars (on_petrol)
+            VALUES (1), (1), (0), (1), (0), (0), (0), (0), (1), (1);
+
+            INSERT INTO motorcycles (has_sidecar)
+            VALUES (0), (0), (1), (0), (1), (1), (1), (1), (0), (0);
+        </sql>
+    </changeSet>
+</databaseChangeLog>

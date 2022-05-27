@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd">
+
+    <changeSet id="fill_data_for_second_strategy" author="Rashchupkin">
+        <sql dbms="h2, mysql">
+            INSERT INTO students (first_name, phone_numbers, group_number)
+            VALUES ('John', '291234567, 331234567, 441234567', 'IS-1001'),
+            ('James', '292345678, 332345678, 442345678', 'IST-3031'),
+            ('Alex', '299876543', 'CP-2077'),
+            ('Linda', '334569872, 443214569', 'BF-2042'),
+            ('Sarah', '294679312, 443719825', 'IS-1234');
+
+            INSERT INTO teachers (first_name, phone_numbers, on_vocation)
+            VALUES ('Robert', '297896541, 335623124, 449864312', 1),
+            ('Michael', '294569878', 0),
+            ('Charles', '293334456, 331313258, 448521479', 1),
+            ('Susan', '334613258, 449637418', 0),
+            ('Mary', '294316975, 331328467, 448521473', 1);
+        </sql>
+    </changeSet>
+</databaseChangeLog>
